@@ -13,3 +13,4 @@ if [ ! -f $VIRTUALENV/bin/pip ]; then
 fi
 
 $VIRTUALENV/bin/pip install -r requirements.txt
+$VIRTUALENV/bin/python3 app.py
