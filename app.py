@@ -25,16 +25,16 @@ def save_diary():
     file = request.files['file_give']
     extension = file.filename.split('.')[-1]
     mytime = today.strftime('%Y-%m-%d-%H-%M-%S')
-    filename = f'file-{mytime}.{extension}'
-    save_to = f'static/{filename}'
+    filename = "file-%s.%s"%(mytime,extension)
+    save_to = "static/%s"%filename
     file.save(save_to)
 
     profile = request.files['profile_give']
     extension = profile.filename.split('.')[-1]
     today = datetime.now()
     mytime = today.strftime('%Y-%m-%d-%H-%M-%S')
-    profile_name = f'profile-{mytime}.{extension}'
-    save_to = f'static/{profile_name}'
+    profile_name = "profile-%s.%s"%(mytime,extension)
+    save_to = "static/%s"%profile_name
     profile.save(save_to)
 
     doc = {
